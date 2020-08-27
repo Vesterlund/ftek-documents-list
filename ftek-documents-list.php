@@ -3,8 +3,8 @@
 /** 
 * Plugin Name: Ftek Documents
 * Description: Shortcode for listing documents such as meeting records.
-* Author: Pontus Granström
-* Version: 2.3
+* Author: Pontus Granström | Updated by: Albert Vesterlund
+* Version: 2.3.1
 * Text Domain: ftekdoc
 * Domain Path: /languages
 * GitHub Plugin URI: Fysikteknologsektionen/ftek-documents-list
@@ -14,14 +14,14 @@ function ftek_documents_shortcode($atts, $content, $tag)
 {
     extract( shortcode_atts( array(
 		'path' => '',
-                'order' => 'default'
+        'order' => 'default'
 	), $atts ) );
     
     if (!$path) {
         return __('No path supplied: [ftek_documents path="your/path/here"]', 'ftekdoc');
     }
 
-    $subpath = untrailingslashit("/ftek-documents/$path");
+    $subpath = untrailingslashit("ftek-documents/$path");
 
     // We expect years as titles
     // Added some choices. /algmyr Fri Jul 28 20:41:26 CEST 2017
